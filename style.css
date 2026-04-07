@@ -1,3 +1,6 @@
+body{
+    font-family: Arial;
+}
 header{
     background-color: #3131ce;
 }
@@ -5,11 +8,15 @@ header{
 label{
     background-color: rgb(121, 121, 216);
 }
-body{
-    font-family: Arial;
-}
 input, select, textarea{
     width: 300px;
     padding: 5px;
     margin-bottom: 10px;
+}
+button{
+    padding: 10px;
+    background-color: #3131ce;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
