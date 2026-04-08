@@ -33,7 +33,13 @@ function validacao(){
     if (sozinho >= 8) return alert ("O animal ficará muito tempo sozinho");
     if (motivo.length < 10) return alert ("Motivo muito curto");
     if (!aceitar.checked) return alert ("Aceite os Termos");
-    
+
+    if (tipo === "apt" && quintal === "sim"){
+        return alert ("Apartamento não pode ter quintal")
+    }
+    if (tipo === "apt" && financeiro === "não"){
+        return alert ("Uma casa sem quintal pode não ser adequada")
+    }
 
 
 
