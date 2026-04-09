@@ -38,9 +38,22 @@ function validacao(){
         return alert ("Apartamento não pode ter quintal")
     }
     if (tipo === "apt" && financeiro === "não"){
+        return alert ("Sem condições financeiras")
+    }
+   
+    if (tipo === "casa" && quintal === "não"){
         return alert ("Uma casa sem quintal pode não ser adequada")
     }
+    if (pets_anteriores === "não"){
+        return alert ("A ONG poderá acompanhar sua adaptação")
+    }
 
+    if (sozinho >= 8){
+        let porque = prompt ("O pet não poderá ficar tanto tempo sozinho")
+        if (!porque || porque.length === 0){
+            return alert ("Justifique esse tempo")
+        }
+    }
 
 
 
