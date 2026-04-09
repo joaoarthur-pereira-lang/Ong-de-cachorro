@@ -11,6 +11,10 @@ function validacao(){
     let horas = document.getElementById("horas").value;
     let motivo = document.getElementById("motivo").value;
     let moradia = document.getElementById("moradia").value;
+    let tipo = document.getElementById("tipo").value;
+    let financeiro = document.getElementById("financeiro").value;
+    let sozinho = document.getElementById("horas").value;
+    let aceitar = document.getElementById("aceitar").value;
 
     let cpf_dup = [
         "10324279551",
@@ -21,7 +25,7 @@ function validacao(){
 
     if (nome.length < 3) return alert ("Nome inválido");
     if (!email.includes("@")) return alert ("Email inválido");
-    if (telefone.length < 8) return alert ("Telefoe Inválido");
+    if (telefone.length < 8) return alert ("Telefone Inválido");
     if (cpf === "") return alert ("CPF obrigatório");
     if (cpf_dup.includes(cpf)) return alert ("CPF já cadastrado");
     if (idade < 18) return alert ("Você deve ser maior de idade");
@@ -35,54 +39,36 @@ function validacao(){
     if (!aceitar.checked) return alert ("Aceite os Termos");
 
     if (tipo === "apt" && quintal === "sim"){
-        return alert ("Apartamento não pode ter quintal")
+        return alert ("Apartamento não pode ter quintal");
     }
     if (tipo === "apt" && financeiro === "não"){
-        return alert ("Sem condições financeiras")
+        return alert ("Sem condições financeiras");
     }
    
     if (tipo === "casa" && quintal === "não"){
-        return alert ("Uma casa sem quintal pode não ser adequada")
+        return alert ("Uma casa sem quintal pode não ser adequada");
     }
     if (pets_anteriores === "não"){
-        return alert ("A ONG poderá acompanhar sua adaptação")
+        return alert ("A ONG poderá acompanhar sua adaptação");
     }
 
     if (sozinho >= 8){
-        let porque = prompt ("O pet não poderá ficar tanto tempo sozinho")
+        let porque = prompt ("O pet não poderá ficar tanto tempo sozinho");
         if (!porque || porque.length === 0){
-            return alert ("Justifique esse tempo")
+            return alert ("Justifique esse tempo");
         }
     }
     if (tipo === "apt"){
-        let permite = prompt ("O apartamento permite animais")
-        if (prmite !== "sim"){
-            return alert ("O local não permite animais")
+        let permite = prompt ("O apartamento permite animais");
+        if (permite !== "sim"){
+            return alert ("O local não permite animais");
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if (tipo === "casa" && quintal ==="sim"){
+        let seguro = prompt ("O quintal é seguro?");
+        if (seguro !== "sim"){
+            return alert ("O quintal precisa ser seguro");
+        }
+    }
+    alert("Cadastro realizado com sucesso!");
 }
