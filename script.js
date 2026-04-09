@@ -54,6 +54,13 @@ function validacao(){
             return alert ("Justifique esse tempo")
         }
     }
+    if (tipo === "apt"){
+        let permite = prompt ("O apartamento permite animais")
+        if (prmite !== "sim"){
+            return alert ("O local não permite animais")
+        }
+    }
+
 
 
 
